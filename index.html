@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Oliver Pfäuti</title>
+<meta name="description" content="Oliver Pfäuti — Assistant Professor of Economics at the University of Texas at Austin. Research in macroeconomics and monetary policy." />
+<meta property="og:title" content="Oliver Pfäuti" />
+<meta property="og:description" content="Assistant Professor of Economics, University of Texas at Austin. Research in macroeconomics and monetary policy." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.oliverpfaeuti.com/" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper:    #FFFFFF;
+    --paper-2:  #F4F6FA;
+    --rule:     #E5EAF2;
+    --ink:      #0B1F3A;
+    --ink-soft: #3A4F6E;
+    --ink-mute: #6B7B95;
+    --accent:   #4A6FA5;
+    --accent-d: #2C4D7E;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a { color: var(--ink); text-decoration: none; }
+  a.link {
+    border-bottom: 1px solid var(--accent);
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+  a.link:hover { color: var(--accent-d); border-color: var(--accent-d); }
+
+  .wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ---------- HERO ---------- */
+
+  header.hero {
+    padding: 96px 0 56px;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 160px;
+    gap: 56px;
+    align-items: start;
+  }
+
+  .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 18px;
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(44px, 7vw, 64px);
+    line-height: 1.0;
+    letter-spacing: -0.015em;
+    margin: 0 0 22px;
+    color: var(--ink);
+  }
+
+  .lede {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    max-width: 540px;
+    margin: 0;
+  }
+
+  .portrait {
+    width: 160px;
+    height: 200px;
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink-mute);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    overflow: hidden;
+  }
+  .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .hero-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 24px;
+    margin-top: 28px;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+  }
+  .hero-links a {
+    color: var(--ink-soft);
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+  .hero-links a:hover { color: var(--accent-d); border-color: var(--accent); }
+  .hero-links a.cv {
+    color: var(--ink);
+    font-weight: 500;
+    border-bottom: 1.5px solid var(--ink);
+  }
+  .hero-links a.cv:hover { color: var(--accent-d); border-color: var(--accent-d); }
+
+  /* ---------- AFFILIATIONS STRIP ---------- */
+
+  .affiliations {
+    background: var(--paper-2);
+    padding: 28px 0;
+  }
+  .affiliations .label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 6px;
+  }
+  .affiliations p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.75;
+    margin: 0;
+  }
+  .affiliations a { color: var(--ink); border-bottom: 1px solid var(--accent); }
+  .affiliations a:hover { color: var(--accent-d); border-color: var(--accent-d); }
+
+  /* ---------- SECTIONS ---------- */
+
+  section {
+    padding: 64px 0 24px;
+  }
+
+  .section-head { margin-bottom: 28px; }
+
+  h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 30px;
+    font-weight: 500;
+    margin: 0 0 8px;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+  }
+  .section-rule {
+    width: 32px;
+    height: 2px;
+    background: var(--ink);
+  }
+
+  /* ---------- PAPERS ---------- */
+
+  .paper {
+    padding: 22px 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .paper-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.3;
+    margin: 0 0 8px;
+    color: var(--ink);
+  }
+  .paper-title a {
+    color: var(--ink);
+    border-bottom: 1px solid var(--accent);
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+  .paper-title a:hover { color: var(--accent-d); border-color: var(--accent-d); }
+
+  .paper-authors {
+    font-size: 14px;
+    color: var(--ink-mute);
+    line-height: 1.6;
+    margin: 0 0 10px;
+  }
+  .paper-authors a { color: var(--ink-soft); border-bottom: 1px dotted var(--rule); }
+  .paper-authors a:hover { color: var(--accent-d); border-color: var(--accent); }
+
+  .pub-meta {
+    font-size: 13px;
+    color: var(--ink-mute);
+    line-height: 1.6;
+    font-style: italic;
+    margin-top: 4px;
+  }
+  .pub-meta a {
+    color: var(--ink-soft);
+    border-bottom: 1px dotted var(--rule);
+    font-style: normal;
+  }
+  .pub-meta a:hover { color: var(--accent-d); border-color: var(--accent); }
+
+  .paper-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+  }
+
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    padding: 4px 10px;
+    background: var(--paper-2);
+    border: 1px solid var(--accent);
+    color: var(--ink);
+    font-weight: 500;
+    border-radius: 2px;
+  }
+
+  .awards {
+    margin-top: 14px;
+    padding: 14px 18px;
+    background: var(--paper-2);
+    border-left: 2px solid var(--accent);
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+  .awards strong {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+  .awards ul { margin: 0; padding-left: 16px; }
+  .awards li { margin: 2px 0; }
+  .awards a { color: var(--ink-soft); border-bottom: 1px dotted var(--rule); }
+  .awards a:hover { color: var(--accent-d); border-color: var(--accent); }
+
+  /* ---------- FOOTER ---------- */
+
+  footer {
+    margin-top: 64px;
+    padding: 36px 0 56px;
+    border-top: 1px solid var(--rule);
+    font-size: 12px;
+    color: var(--ink-mute);
+    letter-spacing: 0.02em;
+  }
+  .foot-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  footer a { color: var(--ink-soft); border-bottom: 1px solid var(--rule); }
+  footer a:hover { color: var(--accent-d); border-color: var(--accent); }
+
+  /* ---------- RESPONSIVE ---------- */
+
+  @media (max-width: 720px) {
+    header.hero { padding: 64px 0 40px; }
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .portrait {
+      order: -1;
+      width: 120px;
+      height: 150px;
+    }
+    .wrap { padding: 0 24px; }
+    section { padding: 48px 0 16px; }
+    h2 { font-size: 26px; }
+    .paper-title { font-size: 19px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <h1>Oliver Pfäuti</h1>
+
+        <nav class="hero-links" aria-label="Profile links">
+          <a class="cv" href="https://opfaeuti.github.io/website/CVPfaeuti.pdf">CV (PDF)</a>
+          <a href="mailto:pfaeuti.oliver@gmail.com">Email</a>
+          <a href="https://scholar.google.com/citations?user=GxTjytQAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="https://www.linkedin.com/in/oliver-pf%C3%A4uti-14743a36a/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://twitter.com/PfaeutiEcon" target="_blank" rel="noopener">Twitter</a>
+          <a href="https://bsky.app/profile/pfaeutiecon.bsky.social" target="_blank" rel="noopener">Bluesky</a>
+        </nav>
+      </div>
+
+      <div class="portrait" aria-label="Portrait of Oliver Pfäuti">
+        <img src="data:image/jpeg;base64,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" alt="Oliver Pfäuti" />
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="affiliations">
+  <div class="wrap">
+    <p class="label">Affiliations</p>
+    <p>
+      Assistant Professor of Economics, <a href="https://liberalarts.utexas.edu/economics/">University of Texas at Austin</a>
+      &nbsp;·&nbsp;
+      Affiliated Researcher, <a href="https://sites.utexas.edu/macro/">Empirical Macroeconomics Policy Center of Texas</a>
+      &nbsp;·&nbsp;
+      PhD, <a href="https://www.uni-mannheim.de/gess/programs/cdse/">University of Mannheim (GESS / CDSE)</a>
+    </p>
+  </div>
+</div>
+
+<section id="working-papers">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Working papers</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <article class="paper">
+      <h3 class="paper-title">
+        <a href="https://opfaeuti.github.io/website/AttentiontoMacro.pdf">Attention to the macroeconomy</a>
+      </h3>
+      <p class="paper-authors">
+        with
+        <a href="https://sites.google.com/view/sebastianlink">Sebastian Link</a>,
+        <a href="https://www.ifo.de/peichl-a">Andreas Peichl</a>,
+        <a href="https://sites.google.com/site/chrisrotheconomics/home">Chris Roth</a> and
+        <a href="https://sites.google.com/site/johanneswohlfartecon/home">Johannes Wohlfart</a>
+      </p>
+      <div class="paper-meta">
+        <span class="badge">Revise &amp; resubmit · Quarterly Journal of Economics</span>
+      </div>
+    </article>
+
+    <article class="paper">
+      <h3 class="paper-title">
+        <a href="https://opfaeuti.github.io/website/BHANK_PfaeutiSeyrich.pdf">A behavioral heterogeneous agent New Keynesian model</a>
+      </h3>
+      <p class="paper-authors">
+        with <a href="https://sites.google.com/view/fabianseyrich/home">Fabian Seyrich</a>
+      </p>
+      <div class="paper-meta">
+        <span class="badge">Reject &amp; resubmit · American Economic Review</span>
+      </div>
+      <div class="awards">
+        <strong>Awards</strong>
+        <ul>
+          <li>Finalist, <a href="https://www.ecb.europa.eu/pub/conferences/ecbforum/YE_competition/html/index.en.html">ECB Young Economist Prize</a> (2022)</li>
+          <li>Winner, Young Scholar Award for best paper presented by a graduate student, <a href="https://sndeecon.org/snde-events/snde-awards/">Society for Nonlinear Dynamics and Econometrics</a></li>
+          <li>Finalist, <a href="https://www.qcgbfconference.org/young-economist-prize/">QCGBF Young Economist Prize</a> (2022)</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="paper">
+      <h3 class="paper-title">
+        <a href="https://opfaeuti.github.io/website/PSZ.pdf">Beyond bad luck: macroeconomic implications of persistent heterogeneity in optimism</a>
+      </h3>
+      <p class="paper-authors">
+        with <a href="https://sites.google.com/view/fabianseyrich/home">Fabian Seyrich</a> and <a href="https://sites.dartmouth.edu/jzinman/">Jonathan Zinman</a>
+      </p>
+    </article>
+
+    <article class="paper">
+      <h3 class="paper-title">
+        <a href="https://opfaeuti.github.io/website/Data_MP_BC.pdf">Monetary policy and business cycles in the data economy</a>
+      </h3>
+      <p class="paper-authors">
+        with <a href="https://carlchristiangroh.com">Carl-Christian Groh</a> and <a href="http://www.farzadsaidi.com">Farzad Saidi</a>
+      </p>
+    </article>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Publications</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <article class="paper">
+      <h3 class="paper-title">
+        <a href="https://opfaeuti.github.io/website/IAT.pdf">The inflation attention threshold and inflation surges</a>
+      </h3>
+      <div class="paper-meta">
+        <span class="badge">Conditionally accepted · American Economic Review</span>
+      </div>
+      <div class="awards">
+        <strong>Awards</strong>
+        <ul>
+          <li>Finalist, <a href="https://www.qcgbfconference.org/young-economist-prize/">QCGBF Young Economist Prize</a> (2021)</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="paper">
+      <h3 class="paper-title">
+        <a href="https://opfaeuti.github.io/website/APR.pdf">Subjective housing price expectations, falling natural rates and the optimal inflation target</a>
+      </h3>
+      <p class="paper-authors">
+        with <a href="https://www.klaus-adam.com/">Klaus Adam</a> and <a href="https://treinelt.github.io/">Timo Reinelt</a>
+      </p>
+      <p class="pub-meta">
+        Journal of Monetary Economics, Vol.&nbsp;194, 103647 (2025) &nbsp;·&nbsp;
+        <a href="https://www.sciencedirect.com/science/article/pii/S0304393224001004?via%3Dihub">Publisher link</a>
+      </p>
+    </article>
+
+    <article class="paper">
+      <h3 class="paper-title">
+        <a href="https://opfaeuti.github.io/website/Attention_OP_1.pdf">Inflation — who cares? Monetary policy in times of low attention</a>
+      </h3>
+      <p class="pub-meta">
+        Journal of Money, Credit and Banking, Vol.&nbsp;57, Issue&nbsp;5 (2025) &nbsp;·&nbsp;
+        <a href="https://onlinelibrary.wiley.com/doi/10.1111/jmcb.13145">Publisher link</a> &nbsp;·&nbsp;
+        <a href="https://opfaeuti.github.io/website/Attention_OP_Appendix.pdf">Online appendix</a>
+      </p>
+    </article>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>Department of Economics &middot; 2225 Speedway &middot; Austin, TX</div>
+      <div><a href="mailto:pfaeuti.oliver@gmail.com">pfaeuti.oliver@gmail.com</a></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
